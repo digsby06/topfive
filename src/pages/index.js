@@ -24,7 +24,8 @@ const IndexPage = ({
           <section>
               { edges.map(artist => (
                   <div key={uuid()}>
-                      <h1 className="artist-name">{artist.node.data.artist_name.text}</h1>
+                      <h1 className="artist-name"><span>#{artist.node.data.artist_rank}</span>{artist.node.data.artist_name.text}</h1>
+
                       <Link to={`/artist/${artist.node.uid}`}>See Artist</Link>
                   </div>
               ))}
